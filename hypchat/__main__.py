@@ -1,9 +1,9 @@
 from . import *
 import os, os.path
-import ConfigParser
+import configparser
 import sys
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read([os.path.expanduser('~/.hypchat'), '/etc/hypchat'])
 if config.has_section('HipChat'):
     AUTH_TOKEN = config.get('HipChat', 'token')

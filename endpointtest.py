@@ -1,11 +1,11 @@
 import os
-import ConfigParser
+import configparser
 import sys
 from hypchat import *
 
 AUTH_TOKEN = None
 ENDPOINT = None
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read([os.path.expanduser('~/.hypchat'), '/etc/hypchat'])
 if config.has_section('HipChat'):
     AUTH_TOKEN = config.get('HipChat', 'token')
@@ -25,4 +25,4 @@ else:
 import datetime
 
 room = hipchat.rooms()['items'][0]
-print(room['name'])
+print((room['name']))

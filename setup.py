@@ -27,7 +27,7 @@ def read_file(name):
     try:
         return f.read()
     except IOError:
-        print("could not read %r" % name)
+        print(("could not read %r" % name))
         f.close()
 
 

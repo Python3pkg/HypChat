@@ -2,7 +2,7 @@ import unittest
 import time
 import requests_mock
 
-from common import TestHypChat
+from .common import TestHypChat
 
 
 class TestRateLimit(TestHypChat):
@@ -88,5 +88,5 @@ class TestRateLimit(TestHypChat):
         """
         with requests_mock.Mocker() as m:
             m.register_uri('GET', 'https://api.hipchat.com/v2/user/@john', status_code=200, json=self.hipchat_callback)
-            for i in xrange(3):
+            for i in range(3):
                 self.hipchat.get_user('@john')

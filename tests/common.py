@@ -1,7 +1,7 @@
 import unittest
 import sys
 import os, os.path
-import ConfigParser
+import configparser
 
 package = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, package)
@@ -17,7 +17,7 @@ class TestHypChat(unittest.TestCase):
     def setUpConfig(self):
         search_paths = [os.path.expanduser('~/.hypchat'), '/etc/hypchat']
 
-        self.config = ConfigParser.ConfigParser()
+        self.config = configparser.ConfigParser()
         self.config.read(search_paths)
         if self.config.has_section('HipChat'):
             self.access_token = self.config.get('HipChat', 'token')
